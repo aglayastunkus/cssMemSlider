@@ -1,0 +1,61 @@
+body {
+    color: black;
+    background-color: #333333;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    margin: 50px auto;
+    overflow-x: hidden;
+}
+#slider {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+article img {
+    width: 100%;
+}
+#slides article {
+    width: 20%;
+    float: left;
+}
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+#slides .inner {
+    width: 500%;
+    line-height: 0;
+}
+input {
+    display: none;
+}
+label, a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+label, #active, img {
+    -moz-user-select:none;
+    -webkit-user-select:none;
+}
+#active {
+    text-align: center;
+}
+#active label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+#active label span {
+    display: inline-block;
+    border-radius:50%;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+#active label:hover span{
+    background: gray;
+}
