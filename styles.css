@@ -2,29 +2,35 @@ body {
     color: black;
     background-color: #333333;
 }
+
 * {
     box-sizing: border-box;
 }
+
 .container {
-    margin: 50px auto;
+    margin: 40px auto;
     overflow-x: hidden;
 }
+
 #slider {
     max-width: 70%;
     margin: 0 auto;
     text-align: center;
+    -webkit-transform: translateZ(0);
+    transition: all 0.4s ease-out;
 }
+
 article img {
     width: 100%;
 }
-#slides article {
+
+#slides article, #texts p {
     width: 20%;
     float: left;
 }
+
 #texts p {
-    width: 20%;
-    float: left;
-   margin: 0;
+    margin: 0;
     padding-left: 2px;
 }
 
@@ -32,33 +38,39 @@ article img {
     width: 100%;
     overflow: hidden;
 }
+
 #overflow {
     margin-bottom: 20px;
 }
-#slides .inner{
-    width: 500%;
+
+#slides .inner {
     line-height: 0;
 }
-#texts .inner {
+
+#texts .inner, #slides .inner {
     width: 500%;
 }
+
 input {
     display: none;
 }
+
 label, a {
     cursor: pointer;
     text-decoration: none;
 }
 
 label, #active, img {
-    -moz-user-select:none;
-    -webkit-user-select:none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
+
 #active {
     text-align: right;
 }
+
 #texts {
-position: relative;
+    position: relative;
     bottom: 30px;
     width: 50%;
     font-size: 20px;
@@ -66,94 +78,92 @@ position: relative;
     color: whitesmoke;
     text-align: left;
 }
+
 #active label {
     display: inline-block;
-    width: 30px;
-    line-height: 30px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
 }
+
 #active label span {
     display: inline-block;
-    border-radius:50%;
-    width: 10px;
-    height: 10px;
-    background-color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: darkslategrey;
 }
-#active label:hover span{
+
+#active label:hover span {
     background: gray;
 }
-#slide1:checked ~ #slides .inner {
-    margin-left:0;
-}
 
+#slide1:checked ~ #slides .inner {
+    margin-left: 0;
+}
 
 #slide2:checked ~ #slides .inner {
-    margin-left:-100%;
+    margin-left: -100%;
 }
 
-
 #slide3:checked ~ #slides .inner {
-    margin-left:-200%;
+    margin-left: -200%;
 }
 
 #slide4:checked ~ #slides .inner {
-    margin-left:-300%;
+    margin-left: -300%;
 }
 
-
 #slide5:checked ~ #slides .inner {
-    margin-left:-400%;
+    margin-left: -400%;
 }
 
 #slide1:checked ~ #texts .inner {
-    margin-left:0;
+    margin-left: 0;
 }
 
 #slide2:checked ~ #texts .inner {
-    margin-left:-100%;
+    margin-left: -100%;
 }
 
 #slide3:checked ~ #texts .inner {
-    margin-left:-200%;
+    margin-left: -200%;
 }
 
 #slide4:checked ~ #texts .inner {
-    margin-left:-300%;
+    margin-left: -300%;
 }
 
 #slide5:checked ~ #texts .inner {
-    margin-left:-400%;
+    margin-left: -400%;
 }
+
 #slide1:checked ~ #active label:nth-child(1) span,
 #slide2:checked ~ #active label:nth-child(2) span,
 #slide3:checked ~ #active label:nth-child(3) span,
 #slide4:checked ~ #active label:nth-child(4) span,
 #slide5:checked ~ #active label:nth-child(5) span {
 
-    background-color: darkslategrey !important;
+    background-color: #333333 !important;
+    border: 3px solid darkslategrey;
 }
+
 #slide1:checked:hover ~ #active label:nth-child(1) span,
 #slide2:checked:hover ~ #active label:nth-child(2) span,
 #slide3:checked:hover ~ #active label:nth-child(3) span,
 #slide4:checked:hover ~ #active label:nth-child(4) span,
 #slide5:checked:hover ~ #active label:nth-child(5) span {
 
-    background-color: whitesmoke !important;
-    border: 2px solid darkslategrey;
+    border: 3px solid gray;
 }
-#slides .inner, #texts .inner{
+
+#slides .inner, #texts .inner {
     transition: all 700ms;
-
 }
-
-#slider {
-    -webkit-transform: translateZ(0);
-    transition: all 0.4s ease-out;
-}
-
 
 #slides, #active, #active label, #texts, #texts p {
     -webkit-transform: translateZ(0);
-    transition: all 0.5s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 @media (max-width: 600px) {
@@ -161,10 +171,12 @@ position: relative;
         text-align: center;
         margin-bottom: 10px;
     }
+
     #texts {
         bottom: 0;
         width: 100%;
     }
+
     #slider {
         max-width: 90%;
     }
