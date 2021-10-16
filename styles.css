@@ -16,8 +16,6 @@ body {
     max-width: 70%;
     margin: 0 auto;
     text-align: center;
-    -webkit-transform: translateZ(0);
-    transition: all 0.4s ease-out;
 }
 
 article img {
@@ -92,6 +90,7 @@ label, #active, img {
     width: 15px;
     height: 15px;
     background-color: darkslategrey;
+    transition: all 700ms;
 }
 
 #active label:hover span {
@@ -146,6 +145,7 @@ label, #active, img {
 
     background-color: #333333 !important;
     border: 3px solid darkslategrey;
+    transition: all 700ms;
 }
 
 #slide1:checked:hover ~ #active label:nth-child(1) span,
@@ -159,11 +159,6 @@ label, #active, img {
 
 #slides .inner, #texts .inner {
     transition: all 700ms;
-}
-
-#slides, #active, #active label, #texts, #texts p {
-    -webkit-transform: translateZ(0);
-    transition: all 0.4s ease-out;
 }
 
 @media (max-width: 600px) {
