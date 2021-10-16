@@ -47,7 +47,7 @@ label, #active, img {
 #active label {
     display: inline-block;
     width: 30px;
-    height: 30px;
+    line-height: 30px;
 }
 #active label span {
     display: inline-block;
@@ -58,4 +58,57 @@ label, #active, img {
 }
 #active label:hover span{
     background: gray;
+}
+#slide1:checked ~ #slides .inner {
+    margin-left:0;
+}
+
+
+#slide2:checked ~ #slides .inner {
+    margin-left:-100%;
+}
+
+
+#slide3:checked ~ #slides .inner {
+    margin-left:-200%;
+}
+
+#slide4:checked ~ #slides .inner {
+    margin-left:-300%;
+}
+
+
+#slide5:checked ~ #slides .inner {
+    margin-left:-400%;
+}
+#slide1:checked ~ #active label:nth-child(1) span,
+#slide2:checked ~ #active label:nth-child(2) span,
+#slide3:checked ~ #active label:nth-child(3) span,
+#slide4:checked ~ #active label:nth-child(4) span,
+#slide5:checked ~ #active label:nth-child(5) span {
+
+    background-color: darkslategrey !important;
+}
+#slide1:checked:hover ~ #active label:nth-child(1) span,
+#slide2:checked:hover ~ #active label:nth-child(2) span,
+#slide3:checked:hover ~ #active label:nth-child(3) span,
+#slide4:checked:hover ~ #active label:nth-child(4) span,
+#slide5:checked:hover ~ #active label:nth-child(5) span {
+
+    background-color: whitesmoke !important;
+    border: 2px solid darkslategrey;
+}
+#slides .inner {
+    transition: all 700ms;
+
+}
+#slider {
+    -webkit-transform: translateZ(0);
+    transition: all 0.4s ease-out;
+}
+
+
+#slides, #active, #active label {
+    -webkit-transform: translateZ(0);
+    transition: all 0.5s ease-out;
 }
